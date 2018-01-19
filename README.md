@@ -1,2 +1,2 @@
 # Leetcode_EASY
-Pythons solution for 180 Easy problems on Leetcode . Free problems only.
+Python3 solution for 180 Easy problems on Leetcode . Free problems only.Up to problem 762
