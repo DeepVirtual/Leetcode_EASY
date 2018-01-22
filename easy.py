@@ -4434,7 +4434,49 @@ class Solution:
 if __name__ == "__main__":
     print(Solution().countPrimeSetBits(10,15))            
         
+#766. Toeplitz Matrix        
+class Solution:
+    def isToeplitzMatrix(self, matrix):
+        """
+        :type matrix: List[List[int]]
+        :rtype: bool
+        """
+        if not matrix:
+            return True
+        if not matrix[0]:
+            return True
+        def isvalid(x,y):
+            if -1<x<len(matrix) and -1<y<len(matrix[0]):
+                return True
+            else:
+                return False
+            
+        def isequal(x,y):
+            while isvalid(x+1,y+1):
+                print(matrix[x][y],matrix[x+1][y+1])
+                if matrix[x][y]!=matrix[x+1][y+1]:
+                    return False
+                x=x+1
+                y=y+1
+            return True
         
+        for i in range(len(matrix)):
+            if not isequal(i,0):
+                return False
+        for j in range(len(matrix[0])):
+            if not isequal(0,j):
+                return False
+        return True
+matrix = [[1,2,3,4],[5,1,2,3],[9,5,1,2]]
+matrix = [[1,2],[2,2]]
+if __name__ == "__main__":
+    print(Solution().isToeplitzMatrix(matrix))            
+        
+         
+        
+        
+        
+                
         
         
         
